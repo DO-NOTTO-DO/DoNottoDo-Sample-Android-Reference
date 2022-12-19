@@ -16,3 +16,4 @@ rootProject.name = "DoNotToDoSample"
 include ':app'
 include ':visibilityanimation'
 include ':nestedrecyclerview'
+include ':swiperefreshnestedscrollview'
