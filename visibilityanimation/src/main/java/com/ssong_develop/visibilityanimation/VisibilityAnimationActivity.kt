@@ -17,7 +17,7 @@ class VisibilityAnimationActivity : AppCompatActivity() {
         testTextView = findViewById<TextView>(R.id.test)
 
         testTextView.setOnClickListener {
-            slideUpHide()
+            slideDownHide()
         }
     }
 
