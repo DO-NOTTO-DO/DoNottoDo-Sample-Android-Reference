@@ -26,3 +26,14 @@
 <div>
 <img src="https://github.com/DO-NOTTO-DO/DoNottoDo-Sample-Android-Reference/blob/master/art/swipe_refresh_nested_scroll_view.gif" width="300" height="650"/>
 </div>
+
+
+
+
+## RecyclerView Selection
+
+<div>
+<img src="https://github.com/DO-NOTTO-DO/DoNottoDo-Sample-Android-Reference/blob/master/art/single_selection_1.gif" width="300" height="650"/>
+<img src="https://github.com/DO-NOTTO-DO/DoNottoDo-Sample-Android-Reference/blob/master/art/multiple_selection_1.gif" width="300" height="650"/>
+<img src="https://github.com/DO-NOTTO-DO/DoNottoDo-Sample-Android-Reference/blob/master/art/interface_selection_1.gif" width="300" height="650"/>
+</div>
