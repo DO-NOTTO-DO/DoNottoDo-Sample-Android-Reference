@@ -1,4 +1,4 @@
-package com.ssong_develop.selectionrecyclerview
+package com.ssong_develop.selectionrecyclerview.view
 
 import android.content.Context
 import android.util.AttributeSet

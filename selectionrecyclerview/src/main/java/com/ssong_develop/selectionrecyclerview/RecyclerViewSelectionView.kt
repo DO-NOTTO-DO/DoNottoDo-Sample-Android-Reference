@@ -5,13 +5,12 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.SimpleItemAnimator
 import com.ssong_develop.selectionrecyclerview.adapter.SampleMultipleSelectionAdapter
 import com.ssong_develop.selectionrecyclerview.adapter.SampleSavedStateSelectionAdapter
 import com.ssong_develop.selectionrecyclerview.adapter.SampleSingleSelectionAdapter
 import com.ssong_develop.selectionrecyclerview.adapter.SampleWithInterfaceAdapter
 import com.ssong_develop.selectionrecyclerview.common.SampleData
+import com.ssong_develop.selectionrecyclerview.view.NoChangeAnimationRecyclerView
 
 class RecyclerViewSelectionView : AppCompatActivity() {
 
@@ -45,9 +44,7 @@ class RecyclerViewSelectionView : AppCompatActivity() {
 
         testRecyclerView = findViewById(R.id.test)
 
-        testRecyclerView.apply {
-            adapter = sampleSavedStateSelectionAdapter
-        }
+        addSampleWithInterfaceAdapter()
         initTestData()
     }
 
@@ -159,5 +156,29 @@ class RecyclerViewSelectionView : AppCompatActivity() {
                 SampleData(21,"hello21")
             )
         )
+    }
+
+    private fun addSampleSingleSelectionAdapter() {
+        testRecyclerView.apply {
+            adapter = sampleSingleSelectionAdapter
+        }
+    }
+
+    private fun addSampleMultipleSelectionAdapter() {
+        testRecyclerView.apply {
+            adapter = sampleMultipleSelectionAdapter
+        }
+    }
+
+    private fun addSampleWithInterfaceAdapter() {
+        testRecyclerView.apply {
+            adapter = sampleWithInterfaceAdapter
+        }
+    }
+
+    private fun addSampleSavedStateSelectionAdapter() {
+        testRecyclerView.apply {
+            adapter = sampleSavedStateSelectionAdapter
+        }
     }
 }

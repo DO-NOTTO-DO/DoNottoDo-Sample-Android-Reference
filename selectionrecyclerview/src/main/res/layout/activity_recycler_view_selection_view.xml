@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".RecyclerViewSelectionView">
 
-    <com.ssong_develop.selectionrecyclerview.NoChangeAnimationRecyclerView
+    <com.ssong_develop.selectionrecyclerview.view.NoChangeAnimationRecyclerView
         android:id="@+id/test"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
