@@ -6,11 +6,11 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.ssong_develop.nestedrecyclerview.R
+import com.ssong_develop.nestedrecyclerview.common.ParentData
 import com.ssong_develop.nestedrecyclerview.databinding.ItemParentBinding
-import com.ssong_develop.nestedrecyclerview.viewholder.ParentData
 import com.ssong_develop.nestedrecyclerview.viewholder.ParentViewHolder
 
-val diffUtil = object : DiffUtil.ItemCallback<ParentData>() {
+internal object ParentDiffUtilItemCallback : DiffUtil.ItemCallback<ParentData>() {
     override fun areItemsTheSame(oldItem: ParentData, newItem: ParentData): Boolean {
         return oldItem == newItem
     }
@@ -18,9 +18,10 @@ val diffUtil = object : DiffUtil.ItemCallback<ParentData>() {
     override fun areContentsTheSame(oldItem: ParentData, newItem: ParentData): Boolean {
         return oldItem == newItem
     }
+
 }
 
-class ParentAdapter : ListAdapter<ParentData, ParentViewHolder>(diffUtil) {
+class ParentAdapter : ListAdapter<ParentData, ParentViewHolder>(ParentDiffUtilItemCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ParentViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)

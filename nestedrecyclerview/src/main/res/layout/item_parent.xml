@@ -7,7 +7,11 @@
 
         <variable
             name="data"
-            type="com.ssong_develop.nestedrecyclerview.viewholder.ParentData" />
+            type="com.ssong_develop.nestedrecyclerview.common.ParentData" />
+
+        <variable
+            name="isExpanded"
+            type="Boolean" />
 
     </data>
 
@@ -26,16 +30,26 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="HELLO"/>
 
+        <ImageView
+            android:id="@+id/iv_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:rotationX="@{isExpanded ? 180f : 0f}"
+            android:src="@drawable/ic_arrow_down"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_parent"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone"
+            android:layout_height="wrap_content"
+            app:visibility="@{isExpanded}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/title"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:listitem="@layout/item_child"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

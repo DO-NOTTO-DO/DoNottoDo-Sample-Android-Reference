@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.ssong_develop.nestedrecyclerview.R
+import com.ssong_develop.nestedrecyclerview.common.ChildData
 import com.ssong_develop.nestedrecyclerview.databinding.ItemChildBinding
-import com.ssong_develop.nestedrecyclerview.viewholder.ChildData
 import com.ssong_develop.nestedrecyclerview.viewholder.ChildViewHolder
 
 class ChildAdapter : RecyclerView.Adapter<ChildViewHolder>() {

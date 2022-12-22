@@ -1,17 +1,12 @@
 package com.ssong_develop.nestedrecyclerview.viewholder
 
-import android.util.Log
-import android.view.View
+import androidx.databinding.Observable
 import androidx.databinding.ObservableField
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.ssong_develop.nestedrecyclerview.adapter.ChildAdapter
+import com.ssong_develop.nestedrecyclerview.common.ParentData
 import com.ssong_develop.nestedrecyclerview.databinding.ItemParentBinding
-
-data class ParentData(
-    val id: Int,
-    val title: String,
-    val childDatas: List<ChildData>
-)
+import kotlinx.coroutines.NonCancellable.start
 
 class ParentViewHolder(
     private val binding: ItemParentBinding
@@ -24,17 +19,13 @@ class ParentViewHolder(
      */
     private val childAdapter: ChildAdapter = ChildAdapter()
 
-    private var recyclerViewVisibilityState: Boolean = false
+    private var isExpand = false
 
     init {
         initRecyclerView()
-        binding.title.setOnClickListener {
-            recyclerViewVisibilityState = !recyclerViewVisibilityState
-            if (recyclerViewVisibilityState) {
-                binding.rvParent.visibility = View.VISIBLE
-            } else {
-                binding.rvParent.visibility = View.GONE
-            }
+        binding.ivArrow.setOnClickListener {
+            isExpand = !isExpand
+            binding.isExpanded = isExpand
         }
     }
 
@@ -58,6 +49,9 @@ class ParentViewHolder(
         childAdapter.submitList(data.childDatas)
         binding.apply {
             this.data = data
+            this.isExpanded = isExpand
+            executePendingBindings()
         }
     }
+
 }

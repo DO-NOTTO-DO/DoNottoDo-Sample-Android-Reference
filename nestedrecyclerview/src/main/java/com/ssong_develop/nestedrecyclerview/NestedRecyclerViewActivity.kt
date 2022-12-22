@@ -1,16 +1,14 @@
 package com.ssong_develop.nestedrecyclerview
 
 import android.os.Bundle
-import android.util.Log
-import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ssong_develop.nestedrecyclerview.adapter.ParentAdapter
+import com.ssong_develop.nestedrecyclerview.common.ChildData
+import com.ssong_develop.nestedrecyclerview.common.ParentData
 import com.ssong_develop.nestedrecyclerview.databinding.ActivityNestedRecyclerViewBinding
-import com.ssong_develop.nestedrecyclerview.viewholder.ChildData
-import com.ssong_develop.nestedrecyclerview.viewholder.ParentData
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 

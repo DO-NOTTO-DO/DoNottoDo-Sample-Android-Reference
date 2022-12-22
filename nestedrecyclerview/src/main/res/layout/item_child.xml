@@ -7,7 +7,7 @@
 
         <variable
             name="data"
-            type="com.ssong_develop.nestedrecyclerview.viewholder.ChildData" />
+            type="com.ssong_develop.nestedrecyclerview.common.ChildData" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

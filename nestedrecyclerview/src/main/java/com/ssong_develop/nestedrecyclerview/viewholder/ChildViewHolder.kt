@@ -1,12 +1,8 @@
 package com.ssong_develop.nestedrecyclerview.viewholder
 
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.ssong_develop.nestedrecyclerview.common.ChildData
 import com.ssong_develop.nestedrecyclerview.databinding.ItemChildBinding
-
-data class ChildData(
-    val id: Int,
-    val title: String
-)
 
 class ChildViewHolder(
     private val binding: ItemChildBinding
