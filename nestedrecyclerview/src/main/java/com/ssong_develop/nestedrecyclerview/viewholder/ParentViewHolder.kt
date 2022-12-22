@@ -1,12 +1,9 @@
 package com.ssong_develop.nestedrecyclerview.viewholder
 
-import androidx.databinding.Observable
-import androidx.databinding.ObservableField
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.ssong_develop.nestedrecyclerview.adapter.ChildAdapter
 import com.ssong_develop.nestedrecyclerview.common.ParentData
 import com.ssong_develop.nestedrecyclerview.databinding.ItemParentBinding
-import kotlinx.coroutines.NonCancellable.start
 
 class ParentViewHolder(
     private val binding: ItemParentBinding
@@ -53,5 +50,4 @@ class ParentViewHolder(
             executePendingBindings()
         }
     }
-
 }

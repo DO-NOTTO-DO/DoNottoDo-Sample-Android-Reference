@@ -18,7 +18,6 @@ internal object ParentDiffUtilItemCallback : DiffUtil.ItemCallback<ParentData>()
     override fun areContentsTheSame(oldItem: ParentData, newItem: ParentData): Boolean {
         return oldItem == newItem
     }
-
 }
 
 class ParentAdapter : ListAdapter<ParentData, ParentViewHolder>(ParentDiffUtilItemCallback) {
