@@ -10,6 +10,11 @@ import androidx.fragment.app.FragmentManager
 
 /**
  * Frament의 BackStack과 관련된 내용
+ *
+ * jetpack navigation component를 쓰면 굉장히 간편하게 화면의 움직임을 표현할 수 있지만, 이전에는 이와 같은 방식으로 접근을 했다 정도의 내용으로 접하면 되겠습니다.
+ *
+ * 하지만, fragment의 생성 시 주의사항은 꼭한번 읽고 fragment를 사용하면 좋습니다.
+ *
  */
 class ChangeFragmentView : AppCompatActivity() {
     companion object {
