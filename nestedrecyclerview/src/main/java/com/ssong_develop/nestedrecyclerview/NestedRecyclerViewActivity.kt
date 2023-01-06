@@ -1,8 +1,10 @@
 package com.ssong_develop.nestedrecyclerview
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ssong_develop.nestedrecyclerview.adapter.ParentAdapter
@@ -13,12 +15,18 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class NestedRecyclerViewActivity : AppCompatActivity() {
-    private val parentAdapter: ParentAdapter = ParentAdapter()
+    private lateinit var parentAdapter: ParentAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding: ActivityNestedRecyclerViewBinding =
             DataBindingUtil.setContentView(this, R.layout.activity_nested_recycler_view)
+        parentAdapter = ParentAdapter(
+            // 서버 통신
+            testChildItemViewClickBlock = { view, childData ->
+                Toast.makeText(this,"${childData} 클릭 됐어요",Toast.LENGTH_SHORT).show()
+            }
+        )
         binding.rvTest.apply {
             adapter = parentAdapter
             layoutManager = LinearLayoutManager(this@NestedRecyclerViewActivity)

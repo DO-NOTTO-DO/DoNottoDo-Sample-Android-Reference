@@ -1,12 +1,16 @@
 package com.ssong_develop.nestedrecyclerview.viewholder
 
+import android.view.View
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.ssong_develop.nestedrecyclerview.adapter.ChildAdapter
+import com.ssong_develop.nestedrecyclerview.common.ChildData
 import com.ssong_develop.nestedrecyclerview.common.ParentData
+import com.ssong_develop.nestedrecyclerview.databinding.ItemChildBindingImpl
 import com.ssong_develop.nestedrecyclerview.databinding.ItemParentBinding
 
 class ParentViewHolder(
-    private val binding: ItemParentBinding
+    private val binding: ItemParentBinding,
+    private val testChildItemViewClickBlock : (view: View, childData: ChildData) -> Unit
 ) : ViewHolder(binding.root) {
 
     private lateinit var parentData: ParentData
@@ -14,7 +18,11 @@ class ParentViewHolder(
     /**
      * 자식 어댑터, 즉 하위로 생성되는 리사이클러뷰의 어댑터를 상위 뷰홀더(parent ViewHolder)가 생성될 떄 단 한번만 생성되면 됩니다.
      */
-    private val childAdapter: ChildAdapter = ChildAdapter()
+    private val childAdapter: ChildAdapter = ChildAdapter(
+        childClickListener = { view, childData ->
+            testChildItemViewClickBlock.invoke(view,childData)
+        }
+    )
 
     private var isExpand = false
 

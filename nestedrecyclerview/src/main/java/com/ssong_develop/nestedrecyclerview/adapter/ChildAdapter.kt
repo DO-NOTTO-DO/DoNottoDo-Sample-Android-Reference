@@ -1,8 +1,8 @@
 package com.ssong_develop.nestedrecyclerview.adapter
 
 import android.annotation.SuppressLint
-import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -11,7 +11,9 @@ import com.ssong_develop.nestedrecyclerview.common.ChildData
 import com.ssong_develop.nestedrecyclerview.databinding.ItemChildBinding
 import com.ssong_develop.nestedrecyclerview.viewholder.ChildViewHolder
 
-class ChildAdapter : RecyclerView.Adapter<ChildViewHolder>() {
+class ChildAdapter(
+    private val childClickListener: (view: View, childData: ChildData) -> Unit
+) : RecyclerView.Adapter<ChildViewHolder>() {
 
     private val childItems = mutableListOf<ChildData>()
 
@@ -19,7 +21,7 @@ class ChildAdapter : RecyclerView.Adapter<ChildViewHolder>() {
         val layoutInflater = LayoutInflater.from(parent.context)
         val binding: ItemChildBinding =
             DataBindingUtil.inflate(layoutInflater, R.layout.item_child, parent, false)
-        return ChildViewHolder(binding)
+        return ChildViewHolder(binding, childClickListener)
     }
 
     override fun onBindViewHolder(holder: ChildViewHolder, position: Int) {
